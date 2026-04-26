@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "tnum" on, "lnum" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== БАЗОВЫЕ СТИЛИ ==================== */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+p, .chat-message { font-size: 16px; line-height: 1.5; font-weight: 400; }
+.caption, .deadline-date { font-size: 14px; font-weight: 500; }
+
+/* ==================== АНИМАЦИИ ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.tab-content {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.news-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.news-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== ТОЧКА ПОД АКТИВНОЙ ИКОНКОЙ ==================== */
+.nav-dot {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.nav-dot-light {
+  background-color: #2563EB;
+}
+
+.nav-dot-dark {
+  background-color: #A78BFA;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #121218;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.no-scroll::-webkit-scrollbar { display: none; }
+.no-scroll { scrollbar-width: none; -ms-overflow-style: none; }
