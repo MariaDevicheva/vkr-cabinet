@@ -1197,9 +1197,27 @@ function TeacherCabinet({ user, profile, onLogout }) {
         <button onClick={() => setIsDark(!isDark)} className={`p-2 rounded-full transition ${isDark ? 'bg-[#1E1E2A] text-[#A78BFA]' : 'bg-gray-200 text-gray-600'}`}>{isDark ? <SunIcon /> : <MoonIcon />}</button>
       </div>
       <div className="flex gap-2">
-        <button onClick={() => setActiveNewsTab('all')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${activeNewsTab === 'all' ? 'bg-[#3B82F6] text-white' : (isDark ? 'bg-[#1E1E2A] text-gray-400' : 'bg-gray-100 text-gray-500')}`}>Все</button>
-        <button onClick={() => setActiveNewsTab('important')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${activeNewsTab === 'important' ? 'bg-[#3B82F6] text-white' : (isDark ? 'bg-[#1E1E2A] text-gray-400' : 'bg-gray-100 text-gray-500')}`}>Важное</button>
-      </div>
+  <button 
+    onClick={() => setActiveNewsTab('all')} 
+    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+      activeNewsTab === 'all' 
+        ? (isDark ? 'bg-[#A78BFA] text-white' : 'bg-[#2563EB] text-white') 
+        : (isDark ? 'bg-[#1E1E2A] text-gray-400 border border-[#2A2A3A] hover:text-white' : 'bg-[#F8FAFC] text-gray-500 border border-gray-200 hover:text-gray-700')
+    }`}
+  >
+    Все
+  </button>
+  <button 
+    onClick={() => setActiveNewsTab('important')} 
+    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+      activeNewsTab === 'important' 
+        ? (isDark ? 'bg-[#A78BFA] text-white' : 'bg-[#2563EB] text-white') 
+        : (isDark ? 'bg-[#1E1E2A] text-gray-400 border border-[#2A2A3A] hover:text-white' : 'bg-[#F8FAFC] text-gray-500 border border-gray-200 hover:text-gray-700')
+    }`}
+  >
+    Важное
+  </button>
+</div>
       <div className="space-y-3">
         {filteredNews.map(item => (
           <div key={item.id} className={`news-card rounded-xl overflow-hidden transition-all hover:scale-[1.01] hover:shadow-lg ${item.important ? (isDark ? 'border-l-4 border-l-[#1E3A5F]' : 'border-l-4 border-l-blue-800') : ''} ${theme.card}`}>
